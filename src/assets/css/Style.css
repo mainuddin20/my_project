@@ -1,0 +1,306 @@
+
+#root{
+  background: #081b29;
+}
+.headers {
+      width: 100%;
+      padding: 0 auto;
+      margin: 0 auto;
+     
+}
+    .NavLink{
+      text-align: right;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: rgb(214, 18, 18);
+      text-decoration: none;
+      opacity: 0;
+      animation: slideLeft 1s ease forwards;
+      
+     
+    }
+    .right{
+      text-align: right;
+    }
+    
+    .navbar a {
+      font-size: 20px;
+      color: rgb(225, 7, 245);
+      margin-left: 45px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      position: relative;
+      display: inline-block;
+      opacity: 0;
+      animation: slideTop 1s ease forwards;
+      animation-delay: calc( .20s * var(--i));
+      transition: color 0.3s ease;
+      font-weight: 700;
+    }
+    
+    .navbar a.active {
+      color: #e4e705;
+      font-weight: bold;
+    }
+    
+    .navbar a:hover {
+      color: #0ce0d6;
+    }
+    
+    .navbar a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #0ef006;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+      box-shadow: 0 0 5px cyan,
+      0 0 25px cyan,0 0 50px cyan,
+      0 0 100px cyan, 0 0 200px cyan;
+    }
+    
+    .navbar a:hover::before {
+      transform: scaleX(1);
+    }
+    
+    
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideTop {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+
+
+/* Home Section */
+
+.topp{
+  padding-top: 200px;
+
+}
+
+ /* Button */
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px cyan;
+}
+
+.btn-box:hover {
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan,0 0 50px cyan,
+  0 0 100px cyan, 0 0 200px cyan;
+}
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px !important;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none !important;
+  margin: 40px 45px 40px 0;
+  opacity: 0;
+  /* animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+  transition: all 0.3s ease; 
+  box-shadow: 0 0 10px cyan; */
+  animation: slideLeft 2s ease forwards; /* Slower animation */
+  animation-delay: calc(.4s * var(--i)); /* Delay between icons */
+  transition: all 0.6s ease; /* Smoother transition */
+  box-shadow: 0 0 20px rgba(251, 255, 0, 0.603); /* Bigger glow */
+  
+}
+
+.home-sci a:hover {
+  background: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 40px #0ef;
+  transform: scale(1.1); 
+}
+
+/* Keyframes for sliding left animation */
+ @keyframes slideLeft {
+  0% {
+    transform: translateX(200px); /* Starts off-screen to the right */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Ends at the correct position */
+     opacity: 1; 
+  }
+} 
+
+.home .right .img img {
+  height: 370px;
+  width: 370px;
+  /* border: 1px solid rgb(4, 0, 255); */
+  border-radius: 50%; /* Circular image */
+  animation: superman 2s infinite; /* Animation properties */
+  
+}
+
+
+/* Animation keyframes */
+@keyframes superman {
+  0% {
+    border-color: blue;
+    transform: translate(0, 0);
+    box-shadow: 10px 10px 100px 50px blue;
+  }
+  25% {
+    border-color: rgb(225, 7, 245);
+    box-shadow: 10px 10px 100px 50px rgb(225, 7, 245);
+  }
+  50% {
+    border-color: #e4e705;
+    transform: translate(0, 10px);
+    box-shadow: 10px 10px 100px 50px #e4e705;
+  }
+  75% {
+    border-color: #0ce0d6;
+    box-shadow: 10px 10px 100px 50px #0ce0d6;
+  }
+  100% {
+    border-color: #0ef006;
+    transform: translate(0, 0);
+    box-shadow: 10px 10px 100px 50px #0ef006;
+  }
+}
+
+
+
+/****************************************************************About section********************************/
+.box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #F6E7D8;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -10px 100px;
+    background: linear-gradient(#F68989, #874356);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: #C65D7B;
+    inset: 10px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .content {
+    position: absolute;
+    inset: 30px;
+    border: 6px solid #F6E7D8;
+    z-index: 3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: 0.5s;
+      /* text-align: center; */
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    h2 {
+      position: relative;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 10px 0;
+
+      span {
+        display: block;
+        font-weight: 300;
+        font-size: 13px;
+        padding: 5px 0;
+      }
+    }
+
+    a {
+      /* position: relative; */
+      background-color: #fff;
+      color: #C65D7B;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: 0.5s;
+
+      &:hover {
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  &:hover {
+    &::before {
+      inset: -20px 0px;
+    }
+
+    img {
+      opacity: 0;
+    }
+  }
+}
+
